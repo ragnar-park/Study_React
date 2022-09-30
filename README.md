@@ -59,7 +59,7 @@
 
 # 프로젝트 구조
 - .gitignore
-    - 명시더외 있는 파일들은 깃에 저장되지 않음
+    - 명시되어 있는 파일들은 git에 저장되지 않음
 - package.json
     - npm에서 버전을 관리할 때 프로젝트에서 외부적으로 쓰고 있는 라이브러이의 버전들과 스크립트들이 명시 
 - README.md 
@@ -124,4 +124,93 @@ function 컴포넌트명({ children }){
         </div>
     )
 }
+```
+
+# 삼항연산자를 사용하여 조건 랜더링  
+1. 조건식이 true인 경우와 false인 경우를 모두 표현
+```
+{ 조건식 ? true인 경우 : false인 경우}
+```
+
+2. 조건식이 true인 경우만 표현
+```
+{조건식 && true인 경우}
+```
+
+# useState 함수
+- 컴포넌트에서 동작한 값의 상태(state)를 다루는 Hook함수
+```
+const [현재상태변수, 설정함수] = useState(초기값) 
+// 예
+const [number, setNumber] = useState(초기값); // 배열 비구조화 할당
+
+// 배열 비구조화 할당을 하지 않는다면 
+const numberState = useState(0);
+const number = numberState[0];
+const setNumber = numberState[1]
+```
+- Hook함수
+    - 상태관리를 다루던 클래스를 좀 더 쉽게 다룰수 있도록 만들어진 함수 
+
+# spread 
+- 객체 또는 배열을 펼쳐 저장할 수 있음
+
+```
+const dog = {
+    name = '버튼'
+};
+const cuteDog = {
+    ...dog,
+    age: 10
+}
+const whiteCuteDog = {
+    ...cuteDog,
+    color: 'white'
+}
+```
+
+# 리액트 상태에서 객체를 수정하기
+```
+setUsers({
+    userid: '',
+    name: ''
+})
+```
+- 리액트에서는 상태값의 불변성을 지켜줘야 함
+- 리액트 컴포넌트에서상태가 업데이트 되었음을 감지할 수 있음
+- 리액트에서 객체를 업데이트 할 때는 기존 객체를 직접 수정하면 안되고, 새로운 객체를 만들어서 새 객체에 변화를 줘야 함
+
+# useRef 함수
+- 특정 엘리먼트에 접근하거나 스크롤바 위치를 설정할 때 
+- 외부 라이브러리를 사용할 때
+- useRef() 객체를 생성 -> 가상 DOM에 ref 값을 설정
+    - current : 가상 DOM을 가르킴
+
+# 배열 
+```
+// 객체
+const member = {
+    idx: 1, 
+    userid: 'ronaldo',
+    name: '호날두'
+}
+
+// 배열
+const member = [
+    {
+    idx: 1, 
+    userid: 'ronaldo',
+    name: '호날두'
+    },
+    {
+    idx: 2, 
+    userid: 'messi',
+    name: '메시'
+    },
+    {
+    idx: 3, 
+    userid: 'son',
+    name: '손흥민'
+    },
+]
 ```

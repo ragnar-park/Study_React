@@ -28,8 +28,9 @@ function App() {
         <Test/>
         {/* 컴포넌트는 재사용에 용이하다. */}
 
-        <Hello name="김사과" color="deepskyblue"/>
-        <Hello name="호날두"/>
+        {/* <Hello name="김사과" color="deepskyblue" isVIP={true}/> */}
+        <Hello name="김사과" color="deepskyblue" isVIP/>
+        <Hello name="호날두" />
       </Wrapper>
     </>
     // 2개 이상의 컴포넌트를 사용할때는 태그안에 묶어줘야 하는데 
