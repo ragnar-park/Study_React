@@ -186,6 +186,12 @@ setUsers({
 - useRef() 객체를 생성 -> 가상 DOM에 ref 값을 설정
     - current : 가상 DOM을 가르킴
 
+# useRef 할 수 있는 것
+1. setTimeout, setInterval을 통해서 만들어진 id
+2. 외부 라이브러리를 사용하여 생성된 객체
+3. DOM 값
+
+
 # 배열 
 ```
 // 객체

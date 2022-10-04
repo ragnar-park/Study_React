@@ -1,32 +1,15 @@
 import React from 'react';
 
-function Member({member}){
+function Member({ member, onRemove }){
     return(
     <div>
         <b>{member.idx}</b><span>{member.userid}( {member.name} )</span>
+        <button onClick={ () => onRemove(member.idx) }>삭제</button>
     </div>
     )
 }
 
-function MemberList(){
-    const member = [
-        {
-        idx: 1, 
-        userid: 'ronaldo',
-        name: '호날두'
-        },
-        {
-        idx: 2, 
-        userid: 'messi',
-        name: '메시'
-        },
-        {
-        idx: 3, 
-        userid: 'son',
-        name: '손흥민'
-        },
-    ];
-
+function MemberList({ member, onRemove }){
     return(
         <div>
             {/* 
@@ -38,7 +21,7 @@ function MemberList(){
             {/* js 사용을 위한 중괄호 */}
             {
                 member.map(member => ( 
-                <Member member={member} key={member.idx}/>
+                <Member member={member} key={member.idx} onRemove={onRemove}/>
                 ))
             }
         </div>
